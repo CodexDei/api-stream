@@ -9,21 +9,11 @@ public class StreamFilterEmptyExample {
 
     public static void main(String[] args) {
 
-        //ejemplo con usuario, buscando por apellido
-        Stream<User> names = Stream.of("Eliseo Profeta", "David Rey", "Maria DeJose", "Elias Profeta")
-                                    .map(name -> new User(name.split(" ")[0].toUpperCase(),
-                                               name.split(" ")[1].toUpperCase()))
-                                    .filter(u -> u.getApellido().equalsIgnoreCase("profetax"))
-                                    ;
-        Optional<User> user = names.findFirst();
-        System.out.println(user.orElse(new User("Juan", "Bautista")).getNombre());
-        System.out.println(user.orElseGet(() -> new User("Juan", "Bautista")).getNombre());
-        if(user.isPresent()){
-            System.out.println(user);
-
-        }else {
-            System.out.println("User not found");
-        }
+        //busca datos vacios y devuelve el numero de datos vacios
+        long count = Stream.of("Eliseo Profeta","", "David Rey", "","Maria DeJose", "Elias Profeta", "")
+                    .filter(String::isEmpty)
+                    .count();
+        System.out.println("count:" + count);
 
 
     }

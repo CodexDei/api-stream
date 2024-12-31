@@ -1,5 +1,7 @@
 package org.codexdei.api.stream.example.models;
 
+import java.util.Objects;
+
 public class User {
 
     private String nombre;
@@ -34,6 +36,18 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(nombre, user.nombre) && Objects.equals(apellido, user.apellido);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, apellido);
     }
 
     @Override
