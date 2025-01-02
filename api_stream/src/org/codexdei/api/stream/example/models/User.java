@@ -1,5 +1,7 @@
 package org.codexdei.api.stream.example.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -8,12 +10,15 @@ public class User {
     private String apellido;
     private Integer id;
     private static int lastId = 0;
+    //agregar facturas
+    private List<Invoice> invoices;
 
     public User(String nombre, String apellido){
 
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = ++lastId;
+        this.invoices = new ArrayList<>();
     }
     public String getNombre(){
         return this.nombre;
@@ -36,6 +41,15 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public void addInvoice(Invoice invoice) {
+        this.invoices.add(invoice);
+        invoice.setUser(this);
     }
 
     @Override
