@@ -26,6 +26,8 @@ public class IntStreamExample {
         System.out.println("Average:" + statistics.getAverage());
         System.out.println("Count:" + statistics.getCount());
 
-
+        //random 1 al 100
+        IntStream randomGenerate = IntStream.generate(() -> (int) (Math.random() * 100)).limit(5);
+        randomGenerate.forEach(System.out::println);
     }
 }

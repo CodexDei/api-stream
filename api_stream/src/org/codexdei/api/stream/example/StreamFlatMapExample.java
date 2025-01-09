@@ -14,7 +14,7 @@ public class StreamFlatMapExample {
                                     .map(name -> new User(name.split(" ")[0].toUpperCase(),
                                                name.split(" ")[1].toUpperCase()))
                                     .flatMap(u -> {
-                                        if (u.getApellido().equalsIgnoreCase("profetax")){
+                                        if (u.getLastName().equalsIgnoreCase("profetax")){
                                             return Stream.of(u);
                                         }
                                         return Stream.empty();

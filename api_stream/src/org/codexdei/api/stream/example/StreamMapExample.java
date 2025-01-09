@@ -26,8 +26,8 @@ public class StreamMapExample {
                                                name.split(" ")[1].toUpperCase()))
                                     .peek(System.out::println)
                                     .map(user -> {
-                                        String name = user.getNombre().toLowerCase();
-                                        user.setNombre(name);
+                                        String name = user.getName().toLowerCase();
+                                        user.setName(name);
                                         return user;
                                     });
 

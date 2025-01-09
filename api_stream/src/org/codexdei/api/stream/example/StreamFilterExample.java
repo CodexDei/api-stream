@@ -24,7 +24,7 @@ public class StreamFilterExample {
         Stream<User> userStream = Stream.of("Eliseo Profeta", "David Rey", "Maria DeJose", "Elias Profeta")
                                     .map(name -> new User(name.split(" ")[0].toUpperCase(),
                                                name.split(" ")[1].toUpperCase()))
-                                    .filter(u -> u.getApellido().equalsIgnoreCase("profeta"))
+                                    .filter(u -> u.getLastName().equalsIgnoreCase("profeta"))
                                     .peek(System.out::println)
                                     ;
 

@@ -21,9 +21,9 @@ public class StreamListToStreamExample {
         userList.add(new User("Maria", "Fe"));
 
         Stream<String> names = userList.stream()
-                .map(user -> user.getNombre().toUpperCase()
+                .map(user -> user.getName().toUpperCase()
                 .concat(" ")
-                .concat(user.getApellido().toUpperCase()))
+                .concat(user.getLastName().toUpperCase()))
                 .flatMap(name ->{
                     if (name.contains("Maria".toUpperCase())){
 

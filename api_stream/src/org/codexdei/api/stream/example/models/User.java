@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public class User {
 
-    private String nombre;
-    private String apellido;
+    private String name;
+    private String lastName;
     private Integer id;
     private static int lastId = 0;
     //agregar facturas
@@ -15,24 +15,24 @@ public class User {
 
     public User(String nombre, String apellido){
 
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.name = nombre;
+        this.lastName = apellido;
         this.id = ++lastId;
         this.invoices = new ArrayList<>();
     }
-    public String getNombre(){
-        return this.nombre;
+    public String getName(){
+        return this.name;
     }
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
+    public void setName(String name){
+        this.name = name;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Integer getId() {
@@ -56,16 +56,16 @@ public class User {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(nombre, user.nombre) && Objects.equals(apellido, user.apellido);
+        return Objects.equals(name, user.name) && Objects.equals(lastName, user.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, apellido);
+        return Objects.hash(name, lastName);
     }
 
     @Override
     public String toString() {
-        return nombre + " " + apellido;
+        return name + " " + lastName;
     }
 }
