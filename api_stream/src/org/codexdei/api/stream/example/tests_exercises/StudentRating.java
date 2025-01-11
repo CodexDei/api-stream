@@ -22,7 +22,7 @@ public class StudentRating {
                 .collect(Collectors.groupingBy(student ->
                         student.getGrade() >= 3.0 ? "Passed" : "Failed"));
 
-        System.out.println("Student Passed: " + studentGroup.get("Passed"));
+        System.out.println("Student Passed: " + studentGroup.get("Passed")  );
         System.out.println("Student Failed: " + studentGroup.get("Failed"));
     }
 }
