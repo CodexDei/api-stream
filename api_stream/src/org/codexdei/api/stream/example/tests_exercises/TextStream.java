@@ -37,8 +37,8 @@ public class TextStream {
                 .collect(Collectors.toList());
 
         // Mostrar las palabras más comunes con su frecuencia
-        System.out.println("Palabras más comunes:");
+        System.out.println("most common words:");
         topWords.forEach(entry ->
-                System.out.println("Palabra: " + entry.getKey() + ", Frecuencia: " + entry.getValue()));
+                System.out.println("Word: " + entry.getKey() + ", Frequency: " + entry.getValue()));
     }
 }
